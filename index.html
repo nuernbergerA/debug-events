@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Debug Events</title>
+</head>
+<body>
+<div x-data="{ username: [], password: [] }">
+    <form @submit.prevent>
+        <h2>Login</h2>
+        <table border="1">
+            <thead>
+            <tr>
+                <th>Label</th>
+                <th>Input</th>
+                <th>keydown</th>
+                <th>keyup</th>
+                <th>input</th>
+                <th>change</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th><label for="username">User</label></th>
+                <td><input name="username" id="username" placeholder="username" required="" autocomplete="username"
+                           x-on:keydown="username.keydown = $event.target.value"
+                           x-on:keyup="username.keyup = $event.target.value"
+                           x-on:input="username.input = $event.target.value"
+                           x-on:change="username.change = $event.target.value"
+                ></td>
+                <td x-text="username.keydown"></td>
+                <td x-text="username.keyup"></td>
+                <td x-text="username.input"></td>
+                <td x-text="username.change"></td>
+            </tr>
+            <tr>
+                <th><label for="password">Password</label></th>
+                <td><input type="password" name="password" id="password" placeholder="password" required="" autocomplete="off"
+                           x-on:keydown="password.keydown = $event.target.value"
+                           x-on:keyup="password.keyup = $event.target.value"
+                           x-on:input="password.input = $event.target.value"
+                           x-on:change="password.change = $event.target.value"
+                ></td>
+                <td x-text="password.keydown"></td>
+                <td x-text="password.keyup"></td>
+                <td x-text="password.input"></td>
+                <td x-text="password.change"></td>
+            </tr>
+            <tr>
+                <th><label for="password">Password</label></th>
+                <td><input type="password" name="password" id="password" placeholder="password" required="" autocomplete="off"
+                           x-on:keydown="password.keydown = $event.target.value"
+                           x-on:keyup="password.keyup = $event.target.value"
+                           x-on:input="password.input = $event.target.value"
+                           x-on:change="password.change = $event.target.value"
+                ></td>
+                <td x-text="password.keydown"></td>
+                <td x-text="password.keyup"></td>
+                <td x-text="password.input"></td>
+                <td x-text="password.change"></td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+</body>
+</html>
