@@ -48,19 +48,6 @@
                 <td x-text="password.input"></td>
                 <td x-text="password.change"></td>
             </tr>
-            <tr>
-                <th><label for="password">Password</label></th>
-                <td><input type="password" name="password" id="password" placeholder="password" required="" autocomplete="off"
-                           x-on:keydown="password.keydown = $event.target.value"
-                           x-on:keyup="password.keyup = $event.target.value"
-                           x-on:input="password.input = $event.target.value"
-                           x-on:change="password.change = $event.target.value"
-                ></td>
-                <td x-text="password.keydown"></td>
-                <td x-text="password.keyup"></td>
-                <td x-text="password.input"></td>
-                <td x-text="password.change"></td>
-            </tr>
             </tbody>
         </table>
     </form>
